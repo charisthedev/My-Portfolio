@@ -1,0 +1,68 @@
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import "./contact.scss";
+import { BiSend } from "react-icons/bi";
+import { MdCancel } from "react-icons/md";
+export const ContactUs = ({ AlterPopup }) => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_je05kl9",
+        "template_e8gsdzs",
+        form.current,
+        "f3heQFk_ycb7UsDKq"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          e.target.reset();
+          alert("message sent ✅");
+          AlterPopup();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+  return (
+    <div onClick={AlterPopup} className="formContainer zoomin">
+      {/* <div className="underlay"></div> */}
+      <form ref={form} onSubmit={sendEmail} className="form">
+        <MdCancel onClick={AlterPopup} className="cancelIcon" />
+        <label htmlFor="name" className="label">
+          Name
+        </label>
+        <input
+          type="text"
+          required
+          name="from_name"
+          placeholder="Name"
+          id="name"
+        />
+        <label htmlFor="email" className="label">
+          Email
+        </label>
+        <input
+          type="email"
+          required
+          name="from_email"
+          placeholder="Email_id"
+          id="email"
+        />
+        <label htmlFor="message" className="label">
+          Message
+        </label>
+        <textarea name="message" required placeholder="Message" id="message" />
+        <button type="submit" className="btn btn-submit">
+          Send <BiSend className="sendIcon" />
+        </button>
+      </form>
+    </div>
+  );
+};
+export default ContactUs;
