@@ -175,9 +175,24 @@ function App() {
             for a job|Project.
           </p>
           <div className="iconslist">
-            <FaLinkedin className="socialIcon linkedin" />
+            <a
+              href="https://www.linkedin.com/in/sikiru-razak-89b372225/"
+              target="_blank"
+            >
+              <FaLinkedin className="socialIcon linkedin" />
+            </a>
+            <a
+              href="https://github.com/roscoericch/space-tourism-app"
+              target="_blank"
+            >
+              <FaGithub className="socialIcon github" />
+            </a>
+            <a href="https://twitter.com/sikirurazak1" target="_blank">
+              <FaTwitter className="socialIcon twitter" />
+            </a>
+            {/* <FaLinkedin className="socialIcon linkedin" />
             <FaGithub className="socialIcon github" />
-            <FaTwitter className="socialIcon twitter" />
+            <FaTwitter className="socialIcon twitter" /> */}
           </div>
           <div className="cv-download">
             <a
@@ -621,7 +636,7 @@ function App() {
           </a>
         </div>
       )}
-      {popUp && <ContactUs AlterPopup={AlterPopup} />}
+      {popUp && <ContactUs AlterPopup={AlterPopup} Popup={popUp} />}
     </div>
   );
 }

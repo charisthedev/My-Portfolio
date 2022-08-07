@@ -1,11 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.scss";
 import { BiSend } from "react-icons/bi";
 import { MdCancel } from "react-icons/md";
-export const ContactUs = ({ AlterPopup }) => {
+export const ContactUs = ({ AlterPopup, Popup }) => {
   const form = useRef();
-
+  const name = useRef();
+  useEffect(() => {
+    name.current.focus();
+  }, [Popup]);
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -30,14 +33,15 @@ export const ContactUs = ({ AlterPopup }) => {
   };
 
   return (
-    <div onClick={AlterPopup} className="formContainer zoomin">
-      {/* <div className="underlay"></div> */}
+    <div className="formContainer zoomin">
+      <div onClick={AlterPopup} className="underlay"></div>
       <form ref={form} onSubmit={sendEmail} className="form">
         <MdCancel onClick={AlterPopup} className="cancelIcon" />
         <label htmlFor="name" className="label">
           Name
         </label>
         <input
+          ref={name}
           type="text"
           required
           name="from_name"

@@ -94,6 +94,9 @@ $bp-small: 37.5em;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media only screen and (max-width: $bp-small) {
+      padding: 1rem;
+    }
     .skillsgrid {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
@@ -147,6 +150,9 @@ $bp-small: 37.5em;
       align-items: center;
       @media only screen and (max-width: $bp-medium) {
         padding: 2rem;
+      }
+      @media only screen and (max-width: $bp-small) {
+        padding: 1rem;
       }
       .skillsList {
         display: flex;
@@ -337,7 +343,10 @@ $bp-small: 37.5em;
   &-group {
     display: flex;
     @media only screen and (max-width: $bp-medium) {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 }
@@ -421,25 +430,29 @@ $bp-small: 37.5em;
     rgba(2, 12, 50, 0.99)
   );
   @media only screen and (max-width: $bp-small) {
-    display: block;
+    display: flex;
     position: fixed;
-    align-items: flex-end;
-    justify-content: flex-end;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    width: fit-content;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    // right: 0;
+    // top: 0;
+    height: 20vh;
+    width: 100vw;
     opacity: 0;
-    padding: 8rem 2rem;
+    padding: 2rem 0;
   }
   .HomeIcon {
     font-size: 2rem;
     color: rgb(69, 243, 39);
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 3rem;
+    }
   }
   .navItem {
     font-size: 1.6rem;
     @media only screen and (max-width: $bp-medium) {
-      display: block;
+      display: inline-flex;
     }
     color: #fff;
     cursor: pointer;

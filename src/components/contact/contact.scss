@@ -7,14 +7,21 @@
   left: 0;
   height: 100vh;
   width: 100vw;
+}
+.underlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
   background-color: rgba(255, 255, 255, 0.483);
 }
-
 .form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  z-index: 1000;
   background-image: linear-gradient(
     to bottom right,
     rgb(60, 47, 60),
