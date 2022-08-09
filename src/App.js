@@ -329,9 +329,8 @@ function App() {
                 This Project was inspired by my obsession of the outer space and
                 a web development challenge website, it’s basically a
                 multiplePage website that simulates a space tourism Team
-                travelling to outer space and onboarding individuals who are
-                interested in travelling outer space for a hypothetical tour...
-                The Project was built with React.js,Javascript,Html and css.
+                travelling to outer space. The Project was built with
+                React.js,Javascript,Html and css.
                 <div className="Techstacks"></div>
               </p>
               <div className="links">
@@ -403,11 +402,7 @@ function App() {
               <p className="description">
                 I Designed and Developed a to-do-app that helps in organizing
                 daily activities using web development technologies like
-                HTML,CSS,JAVASCRIPT and frameworks like REACT JS and more.... I
-                created a software that helps us organize our day we all know
-                how Hectic an unplanned busy day can be. I added a functionality
-                that keeps track of the due time you input in the activity and
-                alerts you when the activity planned time elapses...
+                HTML,CSS,JAVASCRIPT and frameworks like REACT JS and more....
               </p>
               <div className="links">
                 <a
@@ -505,12 +500,8 @@ function App() {
               <h1 className="Project-title">TallyStick App</h1>
               <p className="description">
                 This is basically a counter-app I developed and designed to help
-                a store keeper while I was an Intern. The store keeper was
-                facing a challenge of keeping Track of the newly arrived stock
-                when they are been delivered and offloaded in the store. So I
-                made a counter App to keep track of count and a method to store
-                information to every count. This project was created using
-                HTML,CSS and plain Javascript.....
+                a store keeper while I was an Intern. This project was created
+                using HTML,CSS and plain Javascript.....
               </p>
               <div className="links">
                 <a

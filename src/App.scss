@@ -19,6 +19,9 @@ $bp-small: 37.5em;
     background-repeat: no-repeat;
     background-size: cover;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+    @media only screen and (max-width: $bp-medium) {
+      height: 95vh;
+    }
     .header-content {
       .intro-flex {
         display: flex;
@@ -241,11 +244,11 @@ $bp-small: 37.5em;
           max-width: 25rem;
           height: 15rem;
           border-radius: 0.5rem;
-          box-shadow: 40px 30px 10px 10px rgb(69, 243, 39, 0.5);
+          // box-shadow: 40px 30px 10px 10px rgb(69, 243, 39, 0.5);
           @media only screen and (max-width: $bp-medium) {
-            max-width: 15rem;
-            height: 10rem;
-            box-shadow: 10px 10px 10px 3px rgb(69, 243, 39, 0.5);
+            width: 25rem;
+            height: 15rem;
+            // box-shadow: 10px 10px 10px 3px rgb(69, 243, 39, 0.5);
           }
         }
         .overlay-btn {
