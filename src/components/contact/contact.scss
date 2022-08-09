@@ -1,3 +1,6 @@
+$bp-large: 68.75em;
+$bp-medium: 56.25em;
+$bp-small: 37.5em;
 .formContainer {
   display: flex;
   justify-content: center;
@@ -30,6 +33,9 @@
   padding: 3rem;
   border-radius: 0.3rem;
   position: relative;
+  @media only screen and (max-width: $bp-medium) {
+    width: 60%;
+  }
   .cancelIcon {
     position: absolute;
     top: 2%;
@@ -48,6 +54,10 @@
     font-size: 1rem;
     margin-bottom: 0.3rem;
     border-radius: 0.2rem;
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 2rem;
+      width: 40%;
+    }
   }
   input:focus-visible {
     outline: none;
@@ -61,6 +71,10 @@
     font-size: 1.2rem;
     border-radius: 0.2rem;
     padding: 0.3rem;
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 2rem;
+      width: 18rem;
+    }
     &:focus-visible {
       outline: none;
     }
@@ -74,6 +88,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @media only screen and (max-width: $bp-medium) {
+      padding: 1rem 1.5rem;
+    }
   }
 }
 
