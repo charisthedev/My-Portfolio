@@ -33,40 +33,36 @@ export const ContactUs = ({ AlterPopup, Popup }) => {
   };
 
   return (
-    <div className="formContainer zoomin">
-      <div onClick={AlterPopup} className="underlay"></div>
-      <form ref={form} onSubmit={sendEmail} className="form">
-        <MdCancel onClick={AlterPopup} className="cancelIcon" />
-        <label htmlFor="name" className="label">
-          Name
-        </label>
-        <input
-          ref={name}
-          type="text"
-          required
-          name="from_name"
-          placeholder="Name"
-          id="name"
-        />
-        <label htmlFor="email" className="label">
-          Email
-        </label>
-        <input
-          type="email"
-          required
-          name="from_email"
-          placeholder="Email_id"
-          id="email"
-        />
-        <label htmlFor="message" className="label">
-          Message
-        </label>
-        <textarea name="message" required placeholder="Message" id="message" />
-        <button type="submit" className="btn btn-submit">
-          Send <BiSend className="sendIcon" />
-        </button>
-      </form>
-    </div>
+    <form ref={form} onSubmit={sendEmail} className="form">
+      <label htmlFor="name" className="label">
+        Name
+      </label>
+      <input
+        ref={name}
+        type="text"
+        required
+        name="from_name"
+        placeholder="Name"
+        id="name"
+      />
+      <label htmlFor="email" className="label">
+        Email
+      </label>
+      <input
+        type="email"
+        required
+        name="from_email"
+        placeholder="Email_id"
+        id="email"
+      />
+      <label htmlFor="message" className="label">
+        Message
+      </label>
+      <textarea name="message" required placeholder="Message" id="message" />
+      <button type="submit" className="btn btn-submit">
+        Send <BiSend className="sendIcon" />
+      </button>
+    </form>
   );
 };
 export default ContactUs;

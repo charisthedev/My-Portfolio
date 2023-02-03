@@ -7,7 +7,7 @@ import Space from "./files/space-4.png";
 import Blogr from "./files/blogr-snapshot.png";
 import ToDo from "./files/to-do-app.png";
 import TallyStick from "./files/tallystick-snapshot.png";
-import CV from "./files/sikiru-razak-boluwatife.pdf";
+import CV from "./files/Sikiru_Razak.pdf";
 import ContactUs from "./components/contact/contact";
 import {
   FaLinkedin,
@@ -527,19 +527,7 @@ function App() {
         ref={contactRef}
         className={contactVisible ? "contactme moveinbottom" : "contactme"}
       >
-        <div className="contactmeFont">
-          <span>I'm currently Open to new opportunities,</span>
-          <br />
-          <span>And Taking Freelance Clients.</span>
-          <br />
-          <span>Click The button to send me a Messsage</span>
-          <br />
-          <span>I'll get back to You as soon as possible.</span>
-        </div>
-        <button onClick={AlterPopup} className="btn getInTouch getInTouch-bg">
-          Get In Touch
-        </button>
-        {/* <ContactUs /> */}
+        <ContactUs />
       </section>
       <footer className="footer">
         <div className="footerNote">&copy; Sikiru Razak.</div>
@@ -573,12 +561,6 @@ function App() {
               <span>Download CV </span>
               <AiOutlineCloudDownload className="btn-cv-icon" />
             </a>
-            <button
-              onClick={AlterPopup}
-              className="nav-btn btn getInTouch getInTouch-sm"
-            >
-              Get In Touch
-            </button>
           </div>
         </nav>
       )}
@@ -627,7 +609,6 @@ function App() {
           </a>
         </div>
       )}
-      {popUp && <ContactUs AlterPopup={AlterPopup} Popup={popUp} />}
     </div>
   );
 }
