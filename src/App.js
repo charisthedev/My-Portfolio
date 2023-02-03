@@ -1,8 +1,5 @@
 import "./App.scss";
 import { useState, useRef, useMemo, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
-import { useIntersectionObserver } from "react-intersection-observer-hook";
-import { useTrackVisibility } from "react-intersection-observer-hook";
 import Space from "./files/space-4.png";
 import Blogr from "./files/blogr-snapshot.png";
 import ToDo from "./files/to-do-app.png";

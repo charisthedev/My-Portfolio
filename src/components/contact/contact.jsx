@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.scss";
 import { BiSend } from "react-icons/bi";
-import { MdCancel } from "react-icons/md";
 export const ContactUs = ({ AlterPopup, Popup }) => {
   const form = useRef();
   const name = useRef();
