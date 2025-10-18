@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap");
+
+@layer base {
+  :root {
+    --primary: theme("colors.primary.500");
+    --primary-light: theme("colors.primary.400");
+    --accent: theme("colors.accent.DEFAULT");
+    --accent-light: theme("colors.accent.light");
+  }
+
+  * {
+    @apply border-gray-800;
+  }
+
+  html {
+    @apply scroll-smooth antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    @apply bg-gray-900 text-gray-100 font-sans;
+    @apply min-h-screen overflow-x-hidden;
+  }
+
+  /* Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight text-gray-100;
+    line-height: 1.1;
+  }
+
+  h1 {
+    @apply text-4xl md:text-6xl lg:text-7xl;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400;
+  }
+
+  h2 {
+    @apply text-3xl md:text-5xl;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-400;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  p {
+    @apply text-gray-400 leading-relaxed;
+  }
+
+  /* Links */
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply relative overflow-hidden inline-flex items-center justify-center;
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-blue-500/50;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-blue-500 to-blue-400 text-gray-900 font-semibold;
+    @apply hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply border border-gray-700 text-gray-200 bg-gray-900/50 backdrop-blur-sm;
+    @apply hover:bg-gray-800/80 hover:border-gray-600;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-800/50;
+    @apply transition-all duration-300 hover:border-gray-700/50 hover:shadow-2xl hover:shadow-blue-500/5;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-surface2;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-700 rounded-full hover:bg-gray-600;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-blue-500/20 text-blue-500;
+  }
+
+  /* Animations */
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+
+  /* Custom classes */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-400;
+  }
+
+  .section {
+    @apply py-20 md:py-32;
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
