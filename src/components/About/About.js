@@ -13,29 +13,6 @@ import { TbBrandReactNative } from "react-icons/tb";
 import Brand from "../../files/brand.jpg";
 
 const About = () => {
-  const infoItems = [
-    {
-      icon: <FiUser className="text-blue-400 text-xl" />,
-      label: "Full Name",
-      value: "Sikiru Razak",
-    },
-    {
-      icon: <FiMail className="text-blue-400 text-xl" />,
-      label: "Email",
-      value: "sikirurazak1@gmail.com",
-    },
-    {
-      icon: <FiAward className="text-blue-400 text-xl" />,
-      label: "Experience",
-      value: "5+ Years",
-    },
-    {
-      icon: <FiMapPin className="text-blue-400 text-xl" />,
-      label: "Location",
-      value: "Lagos, Nigeria",
-    },
-  ];
-
   const skills = [
     {
       name: "JavaScript",
