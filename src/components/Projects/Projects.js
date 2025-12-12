@@ -81,9 +81,6 @@ const Projects = () => {
             Recent <span className="text-gradient">Works</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto mb-6 rounded-full" />
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A selection some of my recent work.
-          </p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
