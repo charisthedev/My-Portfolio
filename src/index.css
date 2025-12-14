@@ -101,6 +101,16 @@
     @apply bg-gray-700 rounded-full hover:bg-gray-600;
   }
 
+  /* Hide scrollbar for carousels */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
   /* Selection */
   ::selection {
     @apply bg-blue-500/20 text-blue-500;
