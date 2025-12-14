@@ -1,11 +1,30 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const CustomCursor = () => {
-  const [position, setPosition] = useState({ x: null, y: null });
+  const cursorRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check if device is mobile/touch device
+    const checkMobile = () => {
+      const isTouchDevice =
+        "ontouchstart" in window || navigator.maxTouchPoints > 0;
+      const isSmallScreen = window.innerWidth <= 768;
+      const isMobileUA =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        );
+
+      return isTouchDevice || isSmallScreen || isMobileUA;
+    };
+
+    setIsMobile(checkMobile());
+
+    // Don't initialize cursor on mobile
+    if (checkMobile()) return;
+
     let animationFrameId;
     let targetX = 0;
     let targetY = 0;
@@ -21,10 +40,19 @@ const CustomCursor = () => {
     };
 
     const animate = () => {
-      currentX = lerp(currentX, targetX, 0.1);
-      currentY = lerp(currentY, targetY, 0.1);
+      if (!cursorRef.current) {
+        animationFrameId = requestAnimationFrame(animate);
+        return;
+      }
 
-      setPosition({ x: currentX, y: currentY });
+      currentX = lerp(currentX, targetX, 0.15);
+      currentY = lerp(currentY, targetY, 0.15);
+
+      // Direct DOM manipulation for better performance
+      cursorRef.current.style.transform = `translate3d(${currentX - 12}px, ${
+        currentY - 12
+      }px, 0)`;
+
       animationFrameId = requestAnimationFrame(animate);
     };
 
@@ -32,7 +60,10 @@ const CustomCursor = () => {
     const handleMouseLeave = () => setIsVisible(false);
 
     const handleMouseOver = (e) => {
-      if (e.target.closest("a, button, [data-cursor-hover]")) {
+      const hoverableElement = e.target.closest(
+        "a, button, [data-cursor-hover], input, textarea, select"
+      );
+      if (hoverableElement) {
         setIsHovered(true);
       }
     };
@@ -40,15 +71,18 @@ const CustomCursor = () => {
     const handleMouseOut = (e) => {
       if (
         !e.relatedTarget ||
-        !e.relatedTarget.closest("a, button, [data-cursor-hover]")
+        !e.relatedTarget.closest(
+          "a, button, [data-cursor-hover], input, textarea, select"
+        )
       ) {
         setIsHovered(false);
       }
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseover", handleMouseOver);
-    document.addEventListener("mouseout", handleMouseOut);
+    // Use passive listeners for better performance
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    document.addEventListener("mouseover", handleMouseOver, { passive: true });
+    document.addEventListener("mouseout", handleMouseOut, { passive: true });
     document.documentElement.addEventListener("mouseenter", handleMouseEnter);
     document.documentElement.addEventListener("mouseleave", handleMouseLeave);
 
@@ -66,19 +100,22 @@ const CustomCursor = () => {
         "mouseleave",
         handleMouseLeave
       );
-      cancelAnimationFrame(animationFrameId);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
     };
   }, [isVisible]);
 
-  if (typeof window === "undefined") return null;
+  // Don't render on mobile or server-side
+  if (typeof window === "undefined" || isMobile) return null;
 
   return (
     <div
-      className="fixed z-[9999] pointer-events-none transition-all duration-300 ease-out"
+      ref={cursorRef}
+      className="fixed z-[9999] pointer-events-none"
       style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        transform: "translate(-50%, -50%)",
+        left: 0,
+        top: 0,
         opacity: isVisible ? 1 : 0,
         width: isHovered ? "24px" : "12px",
         height: isHovered ? "24px" : "12px",
@@ -86,8 +123,10 @@ const CustomCursor = () => {
         background:
           "radial-gradient(circle, rgba(59,130,246,0.8) 0%, rgba(37,99,235,0.8) 100%)",
         backdropFilter: "blur(2px)",
-        willChange: "transform, width, height",
-        transition: "width 0.3s ease, height 0.3s ease, opacity 0.2s ease",
+        willChange: "transform",
+        transition:
+          "width 0.2s cubic-bezier(0.4, 0, 0.2, 1), height 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s ease-out",
+        boxShadow: "0 0 20px rgba(59,130,246,0.3)",
       }}
     />
   );
