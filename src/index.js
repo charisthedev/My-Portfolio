@@ -11,6 +11,23 @@ root.render(
   </React.StrictMode>
 );
 
+if ("serviceWorker" in navigator) {
+  if (process.env.NODE_ENV === "production") {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("/service-worker.js")
+        .catch((error) => {
+          // Keep failure non-blocking for app boot.
+          console.error("Service worker registration failed:", error);
+        });
+    });
+  } else {
+    navigator.serviceWorker.ready
+      .then((registration) => registration.unregister())
+      .catch(() => {});
+  }
+}
+
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

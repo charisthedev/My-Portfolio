@@ -29,6 +29,16 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### Offline support (service worker)
+
+The app now includes a service worker at `public/service-worker.js` and registers it in production builds from `src/index.js`.
+
+To test offline behavior locally:
+
+1. Run `npm run build`
+2. Serve the build output (for example, `npx serve -s build`)
+3. Open the app in the browser, then switch the network to offline in DevTools and refresh
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
