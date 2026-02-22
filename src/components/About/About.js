@@ -102,8 +102,7 @@ const About = () => {
 
               <div className="space-y-4 mb-8 text-gray-300">
                 <p>
-                  I'm <span className="text-gradient">Sikiru Razak</span>, a
-                  passionate Software Engineer with a proven track record of
+                  I'm a passionate Software Engineer with a proven track record of
                   building scalable, high-impact solutions and driving
                   collaboration across cross-functional teams.
                 </p>
@@ -146,8 +145,7 @@ const About = () => {
 
               <div className="space-y-4 mb-8 text-gray-300">
                 <p>
-                  I'm <span className="text-gradient">Sikiru Razak</span>, a
-                  passionate Software Engineer with a proven track record of
+                  I'm a passionate Software Engineer with a proven track record of
                   building scalable, high-impact solutions and driving
                   collaboration across cross-functional teams.
                 </p>
