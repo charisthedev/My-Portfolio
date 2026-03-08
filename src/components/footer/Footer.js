@@ -5,8 +5,10 @@ import {
   FaTwitter,
   FaInstagram,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -74,7 +76,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="text-gray-400 text-center">
-            <p>© {currentYear} Charis</p>
+            <p>{t('footer.copyright', { year: currentYear })}</p>
           </div>
         </div>
       </div>

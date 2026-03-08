@@ -8,8 +8,10 @@ import {
   FiTwitter,
   FiMail,
 } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -55,8 +57,9 @@ const Hero = () => {
             variants={item}
             className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6"
           >
-            <span className="text-gradient">Pragmatism</span> isn’t compromise,
-            It’s <span className="text-gradient">clarity</span>.
+            <span className="text-gradient">{t('hero.pragmatism')}</span>{t('hero.isn_t_compromise')}
+            <br />
+            {t('hero.its')}<span className="text-gradient">{t('hero.clarity')}</span>.
           </motion.h1>
 
           <motion.div variants={item} className="flex flex-wrap gap-4">
@@ -66,14 +69,14 @@ const Hero = () => {
               duration={500}
               className="btn btn-primary group"
             >
-              View My Work
+              {t('hero.view_my_work')}
               <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
               href="mailto:sikirurazak1@gmail.com"
               className="btn btn-outline group"
             >
-              Get In Touch
+              {t('hero.get_in_touch')}
               <FiMail className="ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.div>
@@ -94,7 +97,7 @@ const Hero = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors"
-            aria-label={`Social link ${index + 1}`}
+            aria-label={t('hero.social_link', { count: index + 1 })}
           >
             {React.cloneElement(social.icon, { size: 20 })}
           </a>

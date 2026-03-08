@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";  // Replace SCSS with Tailwind CSS
+import "./index.css";
+import "./i18n"; // Import i18n before App
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
@@ -24,7 +25,7 @@ if ("serviceWorker" in navigator) {
   } else {
     navigator.serviceWorker.ready
       .then((registration) => registration.unregister())
-      .catch(() => {});
+      .catch(() => { });
   }
 }
 

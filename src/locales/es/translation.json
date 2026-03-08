@@ -1,0 +1,64 @@
+{
+    "nav": {
+        "about": "Sobre mí",
+        "portfolio": "Portafolio",
+        "contact": "Contacto"
+    },
+    "hero": {
+        "pragmatism": "El pragmatismo",
+        "isn_t_compromise": " no es un compromiso,",
+        "its": "Es ",
+        "clarity": "claridad",
+        "view_my_work": "Ver mi trabajo",
+        "get_in_touch": "Ponerse en contacto",
+        "social_link": "Enlace social {{count}}"
+    },
+    "about": {
+        "available": "Disponible",
+        "title_part1": "Creando Experiencias Digitales Que ",
+        "title_part2": "Inspiran",
+        "p1": "Un Ingeniero de Software apasionado con una trayectoria probada en la construcción de soluciones escalables de alto impacto y en el fomento de la colaboración en equipos multifuncionales.",
+        "p2": "Mi enfoque combina la experiencia técnica con la resolución creativa de problemas, asegurando que cada proyecto no solo cumpla sino que supere las expectativas.",
+        "my_skills_prefix": "Mis ",
+        "my_skills_highlight": "Habilidades",
+        "lets_work_together": "Trabajemos Juntos"
+    },
+    "projects": {
+        "recent": "Trabajos ",
+        "works": "Recientes",
+        "view_code": "Ver Código",
+        "list": {
+            "peerdict": {
+                "title": "Peerdict",
+                "description": "Peerdict es una plataforma de predicción peer-to-peer que permite a los usuarios apostar en eventos deportivos en tiempo real."
+            },
+            "matakai": {
+                "title": "Matakai",
+                "description": "Plataforma comunitaria global que conecta a inmigrantes de todo el mundo a través de historias compartidas y experiencias de intercambio cultural."
+            },
+            "amtil": {
+                "title": "Amtil",
+                "description": "Entorno de aprendizaje inmersivo en 3D que revoluciona la educación aeronáutica con simulaciones interactivas y módulos de capacitación."
+            },
+            "kargoplex": {
+                "title": "Kargoplex",
+                "description": "Plataforma de logística en tiempo real que proporciona visibilidad integral de envíos de extremo a extremo y capacidades de seguimiento avanzadas."
+            },
+            "skaletek": {
+                "title": "SkaleTek",
+                "description": "Sistema automatizado de gestión del cumplimiento que optimiza los requisitos regulatorios y los procesos de auditoría para empresas modernas."
+            },
+            "lucent": {
+                "title": "Lucent",
+                "description": "Panel de análisis empresarial que transforma datos comerciales complejos en información procesable y decisiones estratégicas."
+            },
+            "aibanc": {
+                "title": "Aibanc",
+                "description": "Plataforma de préstamos impulsada por IA que democratiza el acceso a soluciones financieras instantáneas y personalizadas."
+            }
+        }
+    },
+    "footer": {
+        "copyright": "© {{year}} Charis"
+    }
+}

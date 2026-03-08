@@ -1,0 +1,64 @@
+{
+    "nav": {
+        "about": "About",
+        "portfolio": "Portfolio",
+        "contact": "Contact"
+    },
+    "hero": {
+        "pragmatism": "Pragmatism",
+        "isn_t_compromise": " isn’t compromise,",
+        "its": "It’s ",
+        "clarity": "clarity",
+        "view_my_work": "View My Work",
+        "get_in_touch": "Get In Touch",
+        "social_link": "Social link {{count}}"
+    },
+    "about": {
+        "available": "Available",
+        "title_part1": "Crafting Digital Experiences That ",
+        "title_part2": "Inspire",
+        "p1": "A passionate Software Engineer with a proven track record of building scalable, high-impact solutions and driving collaboration across cross-functional teams.",
+        "p2": "My approach combines technical expertise with creative problem-solving, ensuring that every project not only meets but exceeds expectations.",
+        "my_skills_prefix": "My ",
+        "my_skills_highlight": "Skills",
+        "lets_work_together": "Let's Work Together"
+    },
+    "projects": {
+        "recent": "Recent ",
+        "works": "Works",
+        "view_code": "View Code",
+        "list": {
+            "peerdict": {
+                "title": "Peerdict",
+                "description": "Peerdict is a peer-to-peer prediction platform that allows users to stake on real-time sports events."
+            },
+            "matakai": {
+                "title": "Matakai",
+                "description": "Global community platform connecting immigrants worldwide through shared stories and cultural exchange experiences."
+            },
+            "amtil": {
+                "title": "Amtil",
+                "description": "Immersive 3D learning environment revolutionizing aviation education with interactive simulations and training modules."
+            },
+            "kargoplex": {
+                "title": "Kargoplex",
+                "description": "Real-time logistics platform providing comprehensive end-to-end shipment visibility and advanced tracking capabilities."
+            },
+            "skaletek": {
+                "title": "SkaleTek",
+                "description": "Automated compliance management system streamlining regulatory requirements and audit processes for modern enterprises."
+            },
+            "lucent": {
+                "title": "Lucent",
+                "description": "Enterprise analytics dashboard transforming complex business data into actionable insights and strategic decisions."
+            },
+            "aibanc": {
+                "title": "Aibanc",
+                "description": "AI-powered lending platform democratizing access to instant, personalized financial solutions and credit services."
+            }
+        }
+    },
+    "footer": {
+        "copyright": "© {{year}} Charis"
+    }
+}
