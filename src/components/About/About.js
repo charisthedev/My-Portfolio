@@ -79,7 +79,7 @@ const About = () => {
                       alt="Charis"
                       className="w-full h-full rounded-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute bottom-[5%] right-[5%] z-50">
+                    <div className="absolute bottom-[5%] right-[10%] z-50">
                       <div className="relative group">
                         <div className="flex items-center h-5 rounded-full bg-gray-900/80 backdrop-blur-sm border border-gray-700/50 transition-all duration-300 overflow-hidden w-5 group-hover:w-20">
                           <div className="w-5 h-5 flex items-center justify-center flex-shrink-0">
@@ -102,7 +102,7 @@ const About = () => {
 
               <div className="space-y-4 mb-8 text-gray-300">
                 <p>
-                  I'm a passionate Software Engineer with a proven track record of
+                  A passionate Software Engineer with a proven track record of
                   building scalable, high-impact solutions and driving
                   collaboration across cross-functional teams.
                 </p>
@@ -123,7 +123,7 @@ const About = () => {
                     alt="Charis"
                     className="w-full h-full rounded-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute bottom-[5%] right-[5%] z-50">
+                  <div className="absolute bottom-[5%] right-[10%] z-50">
                     <div className="relative group">
                       <div className="flex items-center h-6 rounded-full bg-gray-900/80 backdrop-blur-sm border border-gray-700/50 transition-all duration-300 overflow-hidden w-6 group-hover:w-24">
                         <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
@@ -145,7 +145,7 @@ const About = () => {
 
               <div className="space-y-4 mb-8 text-gray-300">
                 <p>
-                  I'm a passionate Software Engineer with a proven track record of
+                  A passionate Software Engineer with a proven track record of
                   building scalable, high-impact solutions and driving
                   collaboration across cross-functional teams.
                 </p>
