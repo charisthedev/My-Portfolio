@@ -2,12 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { FiGithub, FiLinkedin, FiTwitter, FiMail } from "react-icons/fi";
 import { motion } from "framer-motion";
-
-const navItems = [
-  { name: "About", to: "about" },
-  { name: "Portfolio", to: "projects" },
-  { name: "Contact", to: "contact" },
-];
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const socialLinks = [
   { icon: <FiGithub />, url: "https://github.com/charisthedev" },
@@ -17,8 +13,15 @@ const socialLinks = [
 ];
 
 const Header = () => {
+  const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navItems = [
+    { name: t('nav.about'), to: "about" },
+    { name: t('nav.portfolio'), to: "projects" },
+    { name: t('nav.contact'), to: "contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,11 +38,10 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled
           ? "py-3 bg-surface/80 backdrop-blur-md border-b border-white/5"
           : "py-5 bg-transparent"
-      }`}
+        }`}
     >
       <div className="container flex items-center justify-between">
         {/* Logo */}
@@ -83,24 +85,27 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Social Links */}
-        <div className="hidden md:flex items-center space-x-4">
-          {socialLinks.map((social, index) => (
-            <motion.a
-              key={index}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-gray-400 hover:text-white transition-colors"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 * index + 0.4, duration: 0.3 }}
-            >
-              {social.icon}
-            </motion.a>
-          ))}
+        {/* Social Links & Language Switcher */}
+        <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
+          <div className="flex items-center space-x-1 mr-4">
+            {socialLinks.map((social, index) => (
+              <motion.a
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-gray-400 hover:text-white transition-colors"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.1 * index + 0.4, duration: 0.3 }}
+              >
+                {social.icon}
+              </motion.a>
+            ))}
+          </div>
+          <LanguageSwitcher />
         </div>
 
         <button
@@ -109,24 +114,20 @@ const Header = () => {
           aria-label="Toggle menu"
         >
           <div
-            className={`w-6 flex flex-col items-end space-y-1.5 transition-all duration-300 ${
-              mobileMenuOpen ? "transform rotate-180" : ""
-            }`}
+            className={`w-6 flex flex-col items-end space-y-1.5 transition-all duration-300 ${mobileMenuOpen ? "transform rotate-180" : ""
+              }`}
           >
             <span
-              className={`block h-0.5 bg-white transition-all duration-300 ${
-                mobileMenuOpen ? "w-6 rotate-45 translate-y-2" : "w-6"
-              }`}
+              className={`block h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? "w-6 rotate-45 translate-y-2" : "w-6"
+                }`}
             ></span>
             <span
-              className={`block h-0.5 bg-white transition-all duration-300 ${
-                mobileMenuOpen ? "opacity-0" : "w-5"
-              }`}
+              className={`block h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? "opacity-0" : "w-5"
+                }`}
             ></span>
             <span
-              className={`block h-0.5 bg-white transition-all duration-300 ${
-                mobileMenuOpen ? "w-6 -rotate-45 -translate-y-2" : "w-4"
-              }`}
+              className={`block h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? "w-6 -rotate-45 -translate-y-2" : "w-4"
+                }`}
             ></span>
           </div>
         </button>
@@ -134,9 +135,8 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <motion.div
-        className={`md:hidden overflow-hidden ${
-          mobileMenuOpen ? "block" : "hidden"
-        }`}
+        className={`md:hidden overflow-hidden ${mobileMenuOpen ? "block" : "hidden"
+          }`}
         initial={false}
         animate={mobileMenuOpen ? "open" : "closed"}
         variants={{
@@ -170,6 +170,10 @@ const Header = () => {
                 {social.icon}
               </a>
             ))}
+          </div>
+          <div className="pt-4 border-t border-white/10 flex justify-between items-center">
+            <span className="text-gray-400 text-sm">Language / Idioma</span>
+            <LanguageSwitcher />
           </div>
         </div>
       </motion.div>

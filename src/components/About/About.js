@@ -10,8 +10,10 @@ import {
 } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 import Brand from "../../files/brand.jpg";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+  const { t } = useTranslation();
   const skills = [
     {
       name: "JavaScript",
@@ -86,7 +88,7 @@ const About = () => {
                             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
                           </div>
                           <span className="text-xs text-gray-300 font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-200 delay-75 ml-1">
-                            Available
+                            {t('about.available')}
                           </span>
                         </div>
                       </div>
@@ -95,22 +97,14 @@ const About = () => {
                 </div>
 
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  Crafting Digital Experiences That{" "}
-                  <span className="text-blue-400">Inspire</span>
+                  {t('about.title_part1')}
+                  <span className="text-blue-400">{t('about.title_part2')}</span>
                 </h3>
               </div>
 
               <div className="space-y-4 mb-8 text-gray-300">
-                <p>
-                  A passionate Software Engineer with a proven track record of
-                  building scalable, high-impact solutions and driving
-                  collaboration across cross-functional teams.
-                </p>
-                <p>
-                  My approach combines technical expertise with creative
-                  problem-solving, ensuring that every project not only meets
-                  but exceeds expectations.
-                </p>
+                <p>{t('about.p1')}</p>
+                <p>{t('about.p2')}</p>
               </div>
             </div>
 
@@ -130,7 +124,7 @@ const About = () => {
                           <span className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></span>
                         </div>
                         <span className="text-xs text-gray-300 font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-200 delay-75 ml-1">
-                          Available
+                          {t('about.available')}
                         </span>
                       </div>
                     </div>
@@ -139,28 +133,20 @@ const About = () => {
               </div>
 
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                Crafting Digital Experiences That{" "}
-                <span className="text-blue-400">Inspire</span>
+                {t('about.title_part1')}
+                <span className="text-blue-400">{t('about.title_part2')}</span>
               </h3>
 
               <div className="space-y-4 mb-8 text-gray-300">
-                <p>
-                  A passionate Software Engineer with a proven track record of
-                  building scalable, high-impact solutions and driving
-                  collaboration across cross-functional teams.
-                </p>
-                <p>
-                  My approach combines technical expertise with creative
-                  problem-solving, ensuring that every project not only meets
-                  but exceeds expectations.
-                </p>
+                <p>{t('about.p1')}</p>
+                <p>{t('about.p2')}</p>
               </div>
             </div>
 
             {/* Skills */}
             <div className="mb-8">
               <h4 className="text-xl font-semibold text-white mb-6">
-                My <span className="text-blue-400">Skills</span>
+                {t('about.my_skills_prefix')}<span className="text-blue-400">{t('about.my_skills_highlight')}</span>
               </h4>
               <div className="flex overflow-x-auto scrollbar-hide gap-4 pb-4">
                 {skills.map((skill, index) => (
@@ -193,7 +179,7 @@ const About = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span>Let's Work Together</span>
+                <span>{t('about.lets_work_together')}</span>
                 <svg
                   className="w-4 h-4 group-hover:translate-x-1 transition-transform"
                   fill="none"

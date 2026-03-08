@@ -1,0 +1,64 @@
+{
+    "nav": {
+        "about": "Om mig",
+        "portfolio": "Portfölj",
+        "contact": "Kontakt"
+    },
+    "hero": {
+        "pragmatism": "Pragmatism",
+        "isn_t_compromise": " är inte en kompromiss,",
+        "its": "Det är ",
+        "clarity": "tydlighet",
+        "view_my_work": "Se mitt arbete",
+        "get_in_touch": "Kom i kontakt",
+        "social_link": "Social länk {{count}}"
+    },
+    "about": {
+        "available": "Tillgänglig",
+        "title_part1": "Skapar digitala upplevelser som ",
+        "title_part2": "inspirerar",
+        "p1": "En passionerad mjukvaruingenjör med erfarenhet av att bygga skalbara och effektfulla lösningar, och driva samarbete i tvärfunktionella team.",
+        "p2": "Mitt tillvägagångssätt kombinerar teknisk expertis med kreativ problemlösning, vilket säkerställer att varje projekt inte bara uppfyller, utan överträffar förväntningarna.",
+        "my_skills_prefix": "Mina ",
+        "my_skills_highlight": "Färdigheter",
+        "lets_work_together": "Låt oss arbeta tillsammans"
+    },
+    "projects": {
+        "recent": "Senaste ",
+        "works": "Projekt",
+        "view_code": "Visa kod",
+        "list": {
+            "peerdict": {
+                "title": "Peerdict",
+                "description": "Peerdict är en peer-to-peer prediktionsplattform som låter användare satsa på realtids sportevenemang."
+            },
+            "matakai": {
+                "title": "Matakai",
+                "description": "Global gemenskapsplattform som kopplar samman invandrare över hela världen genom delade berättelser och kulturella utbytesupplevelser."
+            },
+            "amtil": {
+                "title": "Amtil",
+                "description": "Uppslukande 3D-inlärningsmiljö som revolutionerar flygutbildning med interaktiva simuleringar och träningsmoduler."
+            },
+            "kargoplex": {
+                "title": "Kargoplex",
+                "description": "Realtids logistikplattform som ger omfattande end-to-end leveranssynlighet och avancerade spårningsmöjligheter."
+            },
+            "skaletek": {
+                "title": "SkaleTek",
+                "description": "Automatiserat compliance-hanteringssystem som effektiviserar regulatoriska krav och granskningsprocesser för moderna företag."
+            },
+            "lucent": {
+                "title": "Lucent",
+                "description": "Företagsanalysinstrumentbräda som omvandlar komplexa affärsdata till handlingsbara insikter och strategiska beslut."
+            },
+            "aibanc": {
+                "title": "Aibanc",
+                "description": "AI-driven utlåningsplattform som demokratiserar tillgången till omedelbara, personliga finansiella lösningar och kredittjänster."
+            }
+        }
+    },
+    "footer": {
+        "copyright": "© {{year}} Charis"
+    }
+}

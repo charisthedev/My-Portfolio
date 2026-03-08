@@ -1,66 +1,53 @@
 import { motion } from "framer-motion";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 
 const projects = [
   {
     id: 1,
-    title: "Peerdict",
-    description:
-      "Peerdict is a peer-to-peer prediction platform that allows users to stake on real-time sports events.",
+    key: "peerdict",
     image: "peerdict.jpg",
     link: "https://peerdict.com",
     linkType: "live",
   },
   {
     id: 2,
-    title: "Matakai",
-    description:
-      "Global community platform connecting immigrants worldwide through shared stories and cultural exchange experiences.",
+    key: "matakai",
     image: "matakai.jpeg",
     link: "https://matakai.com",
     linkType: "live",
   },
   {
     id: 3,
-    title: "Amtil",
-    description:
-      "Immersive 3D learning environment revolutionizing aviation education with interactive simulations and training modules.",
+    key: "amtil",
     image: "amtil.jpeg",
     link: "https://amtil.co",
     linkType: "live",
   },
   {
     id: 4,
-    title: "Kargoplex",
-    description:
-      "Real-time logistics platform providing comprehensive end-to-end shipment visibility and advanced tracking capabilities.",
+    key: "kargoplex",
     image: "kargoplex.jpeg",
     link: "https://kargoplex.com",
     linkType: "live",
   },
   {
     id: 5,
-    title: "SkaleTek",
-    description:
-      "Automated compliance management system streamlining regulatory requirements and audit processes for modern enterprises.",
+    key: "skaletek",
     image: "skaletek.jpeg",
     link: "https://skaletek.io",
     linkType: "live",
   },
   {
     id: 6,
-    title: "Lucent",
-    description:
-      "Enterprise analytics dashboard transforming complex business data into actionable insights and strategic decisions.",
+    key: "lucent",
     image: "lucent.jpeg",
     link: "https://mylucent.io",
     linkType: "live",
   },
   {
     id: 7,
-    title: "Aibanc",
-    description:
-      "AI-powered lending platform democratizing access to instant, personalized financial solutions and credit services.",
+    key: "aibanc",
     image: "aibanc.jpeg",
     link: "https://aibanc.co",
     linkType: "live",
@@ -68,6 +55,7 @@ const projects = [
 ];
 
 const Projects = () => {
+  const { t } = useTranslation();
   return (
     <section id="projects" className="py-16 bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,7 +74,7 @@ const Projects = () => {
           }}
         >
           <h2 className="text-4xl md:text-xl font-bold text-white mb-4">
-            Recent <span className="text-gradient">Works</span>
+            {t('projects.recent')}<span className="text-gradient">{t('projects.works')}</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto mb-6 rounded-full" />
         </motion.div>
@@ -122,7 +110,7 @@ const Projects = () => {
                     {project.linkType === "github" ? (
                       <>
                         <FiGithub className="w-5 h-5" />
-                        <span>View Code</span>
+                        <span>{t('projects.view_code')}</span>
                       </>
                     ) : (
                       <>
@@ -134,10 +122,10 @@ const Projects = () => {
               </div>
               <div className="p-6 flex flex-col h-full">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                  {project.title}
+                  {t(`projects.list.${project.key}.title`)}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 flex-grow">
-                  {project.description}
+                  {t(`projects.list.${project.key}.description`)}
                 </p>
               </div>
             </motion.div>
@@ -177,7 +165,7 @@ const Projects = () => {
                       {project.linkType === "github" ? (
                         <>
                           <FiGithub className="w-5 h-5" />
-                          <span>View Code</span>
+                          <span>{t('projects.view_code')}</span>
                         </>
                       ) : (
                         <>
@@ -189,10 +177,10 @@ const Projects = () => {
                 </div>
                 <div className="p-6 flex flex-col h-full">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                    {project.title}
+                    {t(`projects.list.${project.key}.title`)}
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 flex-grow">
-                    {project.description}
+                    {t(`projects.list.${project.key}.description`)}
                   </p>
                 </div>
               </motion.div>
