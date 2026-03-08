@@ -4,11 +4,11 @@ import { FiGithub, FiExternalLink } from "react-icons/fi";
 const projects = [
   {
     id: 1,
-    title: "Lucent",
+    title: "Peerdict",
     description:
-      "Enterprise analytics dashboard transforming complex business data into actionable insights and strategic decisions.",
-    image: "lucent.jpeg",
-    link: "https://mylucent.io",
+      "Peerdict is a peer-to-peer prediction platform that allows users to stake on real-time sports events.",
+    image: "peerdict.jpg",
+    link: "https://peerdict.com",
     linkType: "live",
   },
   {
@@ -31,15 +31,6 @@ const projects = [
   },
   {
     id: 4,
-    title: "SkaleTek",
-    description:
-      "Automated compliance management system streamlining regulatory requirements and audit processes for modern enterprises.",
-    image: "skaletek.jpeg",
-    link: "https://skaletek.io",
-    linkType: "live",
-  },
-  {
-    id: 5,
     title: "Kargoplex",
     description:
       "Real-time logistics platform providing comprehensive end-to-end shipment visibility and advanced tracking capabilities.",
@@ -48,7 +39,25 @@ const projects = [
     linkType: "live",
   },
   {
+    id: 5,
+    title: "SkaleTek",
+    description:
+      "Automated compliance management system streamlining regulatory requirements and audit processes for modern enterprises.",
+    image: "skaletek.jpeg",
+    link: "https://skaletek.io",
+    linkType: "live",
+  },
+  {
     id: 6,
+    title: "Lucent",
+    description:
+      "Enterprise analytics dashboard transforming complex business data into actionable insights and strategic decisions.",
+    image: "lucent.jpeg",
+    link: "https://mylucent.io",
+    linkType: "live",
+  },
+  {
+    id: 7,
     title: "Aibanc",
     description:
       "AI-powered lending platform democratizing access to instant, personalized financial solutions and credit services.",
