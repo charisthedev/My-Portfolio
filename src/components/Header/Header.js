@@ -39,8 +39,8 @@ const Header = () => {
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${scrolled
-          ? "py-3 bg-surface/80 backdrop-blur-md border-b border-white/5"
-          : "py-5 bg-transparent"
+        ? "py-3 bg-surface/80 backdrop-blur-md border-b border-white/5"
+        : "py-5 bg-transparent"
         }`}
     >
       <div className="container flex items-center justify-between">
@@ -107,30 +107,34 @@ const Header = () => {
           </div>
           <LanguageSwitcher />
         </div>
-
-        <button
-          className="md:hidden p-2 text-gray-400 hover:text-white focus:outline-none"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
-        >
-          <div
-            className={`w-6 flex flex-col items-end space-y-1.5 transition-all duration-300 ${mobileMenuOpen ? "transform rotate-180" : ""
-              }`}
-          >
-            <span
-              className={`block h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? "w-6 rotate-45 translate-y-2" : "w-6"
-                }`}
-            ></span>
-            <span
-              className={`block h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? "opacity-0" : "w-5"
-                }`}
-            ></span>
-            <span
-              className={`block h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? "w-6 -rotate-45 -translate-y-2" : "w-4"
-                }`}
-            ></span>
+        <div className="md:hidden flex gap-2">
+          <div className="md:hidden">
+            <LanguageSwitcher />
           </div>
-        </button>
+          <button
+            className="md:hidden p-2 text-gray-400 hover:text-white focus:outline-none"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+          >
+            <div
+              className={`w-6 flex flex-col items-end space-y-1.5 transition-all duration-300 ${mobileMenuOpen ? "transform rotate-180" : ""
+                }`}
+            >
+              <span
+                className={`block h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? "w-6 rotate-45 translate-y-2" : "w-6"
+                  }`}
+              ></span>
+              <span
+                className={`block h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? "opacity-0" : "w-5"
+                  }`}
+              ></span>
+              <span
+                className={`block h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? "w-6 -rotate-45 -translate-y-2" : "w-4"
+                  }`}
+              ></span>
+            </div>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -170,10 +174,6 @@ const Header = () => {
                 {social.icon}
               </a>
             ))}
-          </div>
-          <div className="pt-4 border-t border-white/10 flex justify-between items-center">
-            <span className="text-gray-400 text-sm">Language / Idioma</span>
-            <LanguageSwitcher />
           </div>
         </div>
       </motion.div>
